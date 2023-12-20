@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives: 2023 | 薛东礼</title>
+  <title>归档: 2023 | 薛东礼</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -199,7 +199,7 @@
     <div class="drawer-box-head bg-color">
       <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">薛东礼</h3>
-      <h5 class="drawer-box-head_desc"></h5>
+      <h5 class="drawer-box-head_desc">千磨万击还坚劲，任尔东西南北风</h5>
     </div>
     
     <div class="drawer-box-content">
@@ -224,7 +224,7 @@
                     
                       <i class="fas fa-home"></i>
                     
-                    <span class="name">博客配置</span>
+                    <span class="name">Settings</span>
                   </span>
                   <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(1)}" aria-hidden="true"></i>
                 </a>
@@ -292,7 +292,7 @@
                     
                       <i class="fas fa-link"></i>
                     
-                    <span class="name">更多</span>
+                    <span class="name">More</span>
                   </span>
                   <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
                 </a>
@@ -331,6 +331,50 @@
                       <i class="fas fa-film" style="margin-top: -20px;"></i>
                       
                       <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
+                  <span>
+                    
+                      <i class="fa-fw fas fa-language"></i>
+                    
+                    <span class="name">Language</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
+                  
+                  <li>
+                    <a href="/en/">
+                      
+                      <i class="fa-fw fas fa-e" style="margin-top: -20px;"></i>
+                      
+                      <span>English</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-CN">
+                      
+                      <i class="fa-fw fas fa-c" style="margin-top: -20px;"></i>
+                      
+                      <span>简体中文</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-TW">
+                      
+                      <i class="fa-fw fas fa-f" style="margin-top: -20px;"></i>
+                      
+                      <span>繁体中文</span>
                     </a>
                   </li>
                   
@@ -538,6 +582,48 @@
               
             </li>
           
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="语言">
+                  
+                    <i class="fa-fw fas fa-language"></i>
+                  
+                  <span class="name">语言</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/en/">
+                      
+                      <i class="fa-fw fas fa-e" style="margin-top: -20px;"></i>
+                      
+                      <span>English</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-CN">
+                      
+                      <i class="fa-fw fas fa-c" style="margin-top: -20px;"></i>
+                      
+                      <span>简体中文</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-TW">
+                      
+                      <i class="fa-fw fas fa-f" style="margin-top: -20px;"></i>
+                      
+                      <span>繁体中文</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
         
       </ul>
       
@@ -550,13 +636,13 @@
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
-            <span class="title">Search</span>
+            <span class="title">本地搜索</span>
           </span>
           <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"
-            placeholder="Please enter keywords"
+            placeholder="请输入关键字"
             id="local-search-input" 
             @click="getSearchFile()"
             class="st-search-input"
@@ -1378,7 +1464,7 @@
       },
       mounted() {
         const that = this;
-        var copy = 'copy';
+        var copy = '复制';
         /* code */
         var initCopyCode = function () {
           var copyHtml = '';

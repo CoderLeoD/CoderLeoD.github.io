@@ -199,7 +199,7 @@
     <div class="drawer-box-head bg-color">
       <img class="drawer-box-head_logo lazyload placeholder" src="/medias/logo.png" class="lazyload placeholder" data-srcset="/medias/logo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
       <h3 class="drawer-box-head_title">薛东礼</h3>
-      <h5 class="drawer-box-head_desc"></h5>
+      <h5 class="drawer-box-head_desc">千磨万击还坚劲，任尔东西南北风</h5>
     </div>
     
     <div class="drawer-box-content">
@@ -224,7 +224,7 @@
                     
                       <i class="fas fa-home"></i>
                     
-                    <span class="name">博客配置</span>
+                    <span class="name">Settings</span>
                   </span>
                   <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(1)}" aria-hidden="true"></i>
                 </a>
@@ -292,7 +292,7 @@
                     
                       <i class="fas fa-link"></i>
                     
-                    <span class="name">更多</span>
+                    <span class="name">More</span>
                   </span>
                   <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(6)}" aria-hidden="true"></i>
                 </a>
@@ -331,6 +331,50 @@
                       <i class="fas fa-film" style="margin-top: -20px;"></i>
                       
                       <span>百度</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li class="drawer-box-content_item" style="position: relative;">
+              
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(7)">
+                  <span>
+                    
+                      <i class="fa-fw fas fa-language"></i>
+                    
+                    <span class="name">Language</span>
+                  </span>
+                  <i class="fas fa-chevron-left arrow " :class="{'icon-rotate': isOpen(7)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(7)">
+                  
+                  <li>
+                    <a href="/en/">
+                      
+                      <i class="fa-fw fas fa-e" style="margin-top: -20px;"></i>
+                      
+                      <span>English</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-CN">
+                      
+                      <i class="fa-fw fas fa-c" style="margin-top: -20px;"></i>
+                      
+                      <span>简体中文</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-TW">
+                      
+                      <i class="fa-fw fas fa-f" style="margin-top: -20px;"></i>
+                      
+                      <span>繁体中文</span>
                     </a>
                   </li>
                   
@@ -538,6 +582,48 @@
               
             </li>
           
+            <li class="menu-item" style="position: relative;">
+              
+                <a href="javascript:;" class="menu-item-link" title="语言">
+                  
+                    <i class="fa-fw fas fa-language"></i>
+                  
+                  <span class="name">语言</span>
+                  <i class="fas fa-chevron-down arrow" aria-hidden="true"></i>
+                </a>
+                <ul class="sub-menu">
+                  
+                  <li>
+                    <a href="/en/">
+                      
+                      <i class="fa-fw fas fa-e" style="margin-top: -20px;"></i>
+                      
+                      <span>English</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-CN">
+                      
+                      <i class="fa-fw fas fa-c" style="margin-top: -20px;"></i>
+                      
+                      <span>简体中文</span>
+                    </a>
+                  </li>
+                  
+                  <li>
+                    <a href="/zh-TW">
+                      
+                      <i class="fa-fw fas fa-f" style="margin-top: -20px;"></i>
+                      
+                      <span>繁体中文</span>
+                    </a>
+                  </li>
+                  
+                </ul>
+              
+            </li>
+          
         
       </ul>
       
@@ -550,13 +636,13 @@
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
-            <span class="title">Search</span>
+            <span class="title">本地搜索</span>
           </span>
           <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"
-            placeholder="Please enter keywords"
+            placeholder="请输入关键字"
             id="local-search-input" 
             @click="getSearchFile()"
             class="st-search-input"
@@ -682,7 +768,7 @@
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2023-12-19 |
+          <i class="fas fa-calendar"></i> 发表于：2023-12-19 |
         </span>
       
 
@@ -728,16 +814,16 @@
         <div class="copyright">
   <ul class="post-copyright">
     <li class="post-copyright-author">
-    <strong>author:  </strong>薛东礼</a>
+    <strong>作者:  </strong>薛东礼</a>
     </li>
     <li class="post-copyright-link">
-    <strong>link:  </strong>
-    <a href="/2023/12/19/hello-world/" target="_blank" title="Hello World">http://example.com/2023/12/19/hello-world/</a>
+    <strong>文章链接:  </strong>
+    <a href="/2023/12/19/hello-world/" target="_blank" title="Hello World">https://coderleod.github.io/2023/12/19/hello-world/</a>
     </li>
     <li class="post-copyright-license">
-      <strong>Copyright notice:   </strong>
-      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
-      reprint policy. If reproduced, please indicate source!
+      <strong>版权声明:   </strong>
+      本网站所有文章除特别声明外,均采用 <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      许可协议。转载请注明出处!
     </li>
   </ul>
 <div>
@@ -758,7 +844,7 @@
     </div>
     <a href="/2023/12/19/hello-everyone/" class="post-nav-link">
       <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
+        <i class="fas fa-angle-left"></i> 上一篇:
         <div class="title-text">hello everyone</div>
       </div>
       
@@ -1837,7 +1923,7 @@
       },
       mounted() {
         const that = this;
-        var copy = 'copy';
+        var copy = '复制';
         /* code */
         var initCopyCode = function () {
           var copyHtml = '';
