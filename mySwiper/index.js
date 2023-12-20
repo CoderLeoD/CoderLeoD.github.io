@@ -4,6 +4,7 @@ new Vue({
   el: "#mySwiper",
   data: function () {
     return {
+      hotlist: [],
       swiperOption: {
         direction: "vertical", // 这个是竖着的
         slidesPerView: 1,
@@ -50,19 +51,9 @@ new Vue({
     },
     // 获取 知乎热榜数据
     getHotData() {
-      // https://www.zhihu.com/hot
-      fetch('https://api.gmit.vip/Api/ZhiHuHot?format=json').then(data=>data.json()).then((json)=>{
+      fetch('https://api.vvhan.com/api/hotlist?type=zhihuHot').then(data=>data.json()).then((json)=>{
         console.log('Hello a 树哥', json)
-        let html = ''
-        html += '<swiper class="myswiper" ref="myswiper" style="height:350px;" :options="swiperOption">'
-        var i = 1 
-        for (let item of json.data) {
-          // '<div class="zhihu-list-item"><div class="zhihu-hotness">' + i + '</div>' + '<span class="zhihu-title"><a title="' + item.title + '"href="' + item.url + '" target="_blank" rel="external nofollow noreferrer">' + item.title + '</a></span>' + '<div class="zhihu-hot"><span>' + item.hot + '</span></div></div>'
-          html += '<swiper-slide><a href="' + item.url + '" class="toPath"><img class="no-lazy" src="https://api.dujin.org/pic/ghibli/" style="width:100%;height:100%;object-fit: cover;"><h2 class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">' + item.title + '</h2><p class="ani" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.5s" swiper-animate-delay="0.3s">' + item.title + '</p></a></swiper-slide>'
-          i++
-        }
-        html += '<div class="swiper-pagination" slot="pagination"></div></swiper>'
-        document.getElementById('mySwiper').innerHTML = html
+        this.hotlist = json.data;
       }).catch(function(error) {
         console.log(error);
       });
