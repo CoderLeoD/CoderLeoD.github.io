@@ -52,7 +52,6 @@ new Vue({
     // 获取 知乎热榜数据
     getHotData() {
       fetch('https://api.vvhan.com/api/hotlist?type=zhihuHot').then(data=>data.json()).then((json)=>{
-        console.log('Hello a 树哥', json)
         this.hotlist = json.data;
       }).catch(function(error) {
         console.log(error);
