@@ -1,3 +1,8 @@
+/**
+ * 这个方案不好用
+ * 可参考 根目录/source/_data/widget.yml 路径下
+ * 下的 home_widget 配置方案
+ */
 var github_canlendar = (git_user, git_color) => {
   var git_githubapiurl = "https://python-github-calendar-api.vercel.app/api?" + git_user;
   var git_fixed = 'fixed';
