@@ -22,8 +22,6 @@
             
             <tag> git </tag>
             
-            <tag> git上传报错 </tag>
-            
             <tag> GitHub 上传代码报错 </tag>
             
         </tags>
@@ -146,7 +144,7 @@
       
       <categories>
           
-          <category> Expo </category>
+          <category> React Native </category>
           
       </categories>
       
@@ -288,9 +286,9 @@
       
         <tags>
             
-            <tag> Vue </tag>
-            
             <tag> Vue-Router </tag>
+            
+            <tag> Vue </tag>
             
             <tag> Vue-Router刷新当前页面 </tag>
             
@@ -364,7 +362,7 @@
       
       <categories>
           
-          <category> GitHubDesktop </category>
+          <category> git </category>
           
       </categories>
       
@@ -474,7 +472,7 @@
       
       <categories>
           
-          <category> Koa </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -665,7 +663,7 @@
       
       <categories>
           
-          <category> jQuery </category>
+          <category> JavaScript </category>
           
       </categories>
       
@@ -748,7 +746,7 @@
       
       <categories>
           
-          <category> GitHub </category>
+          <category> git </category>
           
       </categories>
       
@@ -756,6 +754,8 @@
         <tags>
             
             <tag> GitHub </tag>
+            
+            <tag> git </tag>
             
             <tag> 连接 GitHub </tag>
             
@@ -811,9 +811,9 @@
       
         <tags>
             
-            <tag> Vue </tag>
-            
             <tag> Vue-Router </tag>
+            
+            <tag> Vue </tag>
             
             <tag> Vue-Router跳转后置顶 </tag>
             
@@ -833,7 +833,7 @@
       
       <categories>
           
-          <category> MySQL8 数据库资源共享 </category>
+          <category> MySQL </category>
           
       </categories>
       
@@ -862,7 +862,7 @@
       
       <categories>
           
-          <category> MySQL8 数据库资源共享 </category>
+          <category> MySQL </category>
           
       </categories>
       
@@ -1014,9 +1014,9 @@
             
             <tag> 语言规范 </tag>
             
-            <tag> CommonJS规范 </tag>
-            
             <tag> Nodejs </tag>
+            
+            <tag> CommonJS规范 </tag>
             
         </tags>
       
@@ -1034,7 +1034,7 @@
       
       <categories>
           
-          <category> 语言规范的区别 </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -1043,9 +1043,11 @@
             
             <tag> 语言规范 </tag>
             
-            <tag> AMD规范 </tag>
-            
             <tag> CMD规范 </tag>
+            
+            <tag> Nodejs </tag>
+            
+            <tag> AMD规范 </tag>
             
             <tag> CommonJS规范 </tag>
             
@@ -1065,7 +1067,7 @@
       
       <categories>
           
-          <category> CMD规范 </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -1077,6 +1079,8 @@
             <tag> CMD </tag>
             
             <tag> CMD规范 </tag>
+            
+            <tag> Nodejs </tag>
             
         </tags>
       
@@ -1094,7 +1098,7 @@
       
       <categories>
           
-          <category> AMD规范 </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -1102,6 +1106,8 @@
         <tags>
             
             <tag> 语言规范 </tag>
+            
+            <tag> Nodejs </tag>
             
             <tag> AMD </tag>
             
@@ -1123,7 +1129,7 @@
       
       <categories>
           
-          <category> CommonJS规范 </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -1131,6 +1137,8 @@
         <tags>
             
             <tag> 语言规范 </tag>
+            
+            <tag> Nodejs </tag>
             
             <tag> CommonJS </tag>
             
@@ -1260,7 +1268,7 @@
       
       <categories>
           
-          <category> Mac软件安装 </category>
+          <category> Mac配置 </category>
           
       </categories>
       
@@ -1291,7 +1299,7 @@
       
       <categories>
           
-          <category> node </category>
+          <category> Nodejs </category>
           
       </categories>
       
@@ -1358,7 +1366,7 @@
       
       <categories>
           
-          <category> 前端-CSS </category>
+          <category> CSS </category>
           
       </categories>
       
