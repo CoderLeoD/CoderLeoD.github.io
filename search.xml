@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>基于React的拖拽效果</title>
+      <link href="/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/"/>
+      <url>/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基于-React-的拖拽效果-Demo"><a href="#基于-React-的拖拽效果-Demo" class="headerlink" title="基于 React 的拖拽效果 Demo"></a>基于 React 的拖拽效果 Demo</h1><p>一个基于 React 的拖拽功能实现的 Demo.</p><h2 id="两个关键点"><a href="#两个关键点" class="headerlink" title="两个关键点"></a>两个关键点</h2><p>1, draggable 属性</p><p>2, drag 事件</p><h3 id="draggable-属性"><a href="#draggable-属性" class="headerlink" title="draggable 属性"></a>draggable 属性</h3><p>img 标签默认是支持拖拽的, 当时其他 HTML 标签, 想要其拖动的话, 需要为其添加 draggable&#x3D;”true” 属性</p><h3 id="drag-事件"><a href="#drag-事件" class="headerlink" title="drag 事件"></a>drag 事件</h3><p>drag 相关的事件有: ondragstart、ondragend、ondragenter、ondragover、ondragleave、ondrop</p><p>一般情况下, 在实际使用时, 根据需求会有以下使用情况:</p><p>1, 被拖拽元素实现: ondragstart、ondragend</p><p>2, 被放置元素实现: ondragenter、ondragover、ondragleave、ondrop</p><p>注意: ondragover 的默认事件 Reset the current drag operation to “none”. 所以想让一个元素可放置，需要重写 ondragover, 使用 preventDefault() 阻止其默认行为.</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="property">ondragover</span> = <span class="function"><span class="params">event</span> =&gt;</span> &#123; </span><br><span class="line">    event.<span class="title function_">preventDefault</span>();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>一般会在 ondrop 事件中确定最终行为的实现.</p><h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><p>项目分为 todo-panel, todo-list, todo-item 三个组件</p><p>1, todo-panel 控制整个 demo 效果的布局和总逻辑的实施, 所有响应式的 state 都在该组件中实现.<br>总控室.<br>所有需要动态渲染的 state 都在当前组件中配置</p><p>2, todo-list 列表组件, 用于展示某种形态的列表<br>桥梁.<br>子组件(todo-item)的 drag 行为需要通过 todo-list 组件传递给父组件(todo-panel);<br>父组件(todo-panel)的 state 变化, 也会引起 todo-list 的动态渲染.</p><p>3, todo-item 本 demo 中最小的行动单元, 具体的某一个 todo行为 的 封装组件<br>也是 被拖拽 的元素(组件), 因此, 在其内部实现了 ondragstart 和 ondragend 两个方法</p><p><strong>注意: 当前 demo 只是一个本地的演示, 目的在于说明 drag 行为的实现需要配置的属性 以及 可能需要实现的事件, 在实际工作中可能还需要 ajax 请求的参与, 这里不再赘述.</strong></p><h1 id="项目源码地址"><a href="#项目源码地址" class="headerlink" title="项目源码地址"></a>项目源码地址</h1><p><a href="https://github.com/CoderLeoD/react-drag">源码地址传送门</a></p><h1 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h1><p><img src="https://raw.githubusercontent.com/CoderLeoD/react-drag/main/src/images/demo.png" class="lazyload placeholder" data-srcset="https://raw.githubusercontent.com/CoderLeoD/react-drag/main/src/images/demo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="项目截图"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React </tag>
+            
+            <tag> react-drag </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>remote: Support for password authentication was removed on August 13, 2021.</title>
       <link href="/2023/12/19/remote-support-for-password-authentication-was-removed-on-august-13-2021/"/>
       <url>/2023/12/19/remote-support-for-password-authentication-was-removed-on-august-13-2021/</url>

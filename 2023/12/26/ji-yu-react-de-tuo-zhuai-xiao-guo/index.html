@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>React+TypeScript项目创建 | CorderLeoD</title>
+  <title>基于React的拖拽效果 | CorderLeoD</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -654,21 +654,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        React+TypeScript项目创建
+        基于React的拖拽效果
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> 发表于：2022-04-27 |
+          <i class="fas fa-calendar"></i> 发表于：2023-12-26 |
         </span>
       
 
@@ -686,7 +686,7 @@
       
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fas fa-file-text-o"></i> 字数统计: 247 |
+            <i class="fas fa-file-text-o"></i> 字数统计: 479 |
           </span>
   
           <span class="min2read">
@@ -717,26 +717,24 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <p>​- 本文主要叙述基于 TypeScript 的 React 项目创建。</p>
-<p>可采取两个工具来创建：<strong>create-react-app</strong>(React官方提供)、<strong>vite</strong>(不仅仅是创建React项目，Vue等也可用)</p>
-<p>每种工具都列出 <strong>npm</strong> 和 <strong>yarn</strong> 两种使用方式</p>
-<h2 id="一，create-react-app"><a href="#一，create-react-app" class="headerlink" title="一，create-react-app"></a>一，create-react-app</h2><h3 id="1，npm"><a href="#1，npm" class="headerlink" title="1，npm"></a>1，npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx create-react-app@latest XXX(项目名称) --template typescript</span><br></pre></td></tr></table></figure>
-<p>@latest 是使用 create-react-app 的最新版本来创建项目</p>
-<p>–template typescript 是使用 ts 来创建项目</p>
-<ul>
-<li>注：npm 与 npx 的关系自行百度。</li>
-</ul>
-<h3 id="2，yarn"><a href="#2，yarn" class="headerlink" title="2，yarn"></a>2，yarn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create react-app XXX(项目名称) --template typescript</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>注意：这里 create 后面是 空格</li>
-</ul>
-<h2 id="二，vite"><a href="#二，vite" class="headerlink" title="二，vite"></a>二，vite</h2><h3 id="1，npm-1"><a href="#1，npm-1" class="headerlink" title="1，npm"></a>1，npm</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init vite@latest</span><br></pre></td></tr></table></figure>
-<p>然后根据自己的项目需求和终端提示，人性化选择即可。</p>
-<h3 id="2，yarn-1"><a href="#2，yarn-1" class="headerlink" title="2，yarn"></a>2，yarn</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn create vite</span><br></pre></td></tr></table></figure>
-<p>同上，接下来也是一系列选择项。</p>
-<h2 id="三，总结"><a href="#三，总结" class="headerlink" title="三，总结"></a>三，总结</h2><p>vite 的创建速度要比 create-react-app 快很多，并且 vite 不仅仅可以创建 React 项目，还可以创建 Vue 等其他框架项目。但是，create-react-app 是 React 官方提供的工具！</p>
-<p>​本章完.</p>
+        <h1 id="基于-React-的拖拽效果-Demo"><a href="#基于-React-的拖拽效果-Demo" class="headerlink" title="基于 React 的拖拽效果 Demo"></a>基于 React 的拖拽效果 Demo</h1><p>一个基于 React 的拖拽功能实现的 Demo.</p>
+<h2 id="两个关键点"><a href="#两个关键点" class="headerlink" title="两个关键点"></a>两个关键点</h2><p>1, draggable 属性</p>
+<p>2, drag 事件</p>
+<h3 id="draggable-属性"><a href="#draggable-属性" class="headerlink" title="draggable 属性"></a>draggable 属性</h3><p>img 标签默认是支持拖拽的, 当时其他 HTML 标签, 想要其拖动的话, 需要为其添加 draggable&#x3D;”true” 属性</p>
+<h3 id="drag-事件"><a href="#drag-事件" class="headerlink" title="drag 事件"></a>drag 事件</h3><p>drag 相关的事件有: ondragstart、ondragend、ondragenter、ondragover、ondragleave、ondrop</p>
+<p>一般情况下, 在实际使用时, 根据需求会有以下使用情况:</p>
+<p>1, 被拖拽元素实现: ondragstart、ondragend</p>
+<p>2, 被放置元素实现: ondragenter、ondragover、ondragleave、ondrop</p>
+<p>注意: ondragover 的默认事件 Reset the current drag operation to “none”. 所以想让一个元素可放置，需要重写 ondragover, 使用 preventDefault() 阻止其默认行为.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">element.<span class="property">ondragover</span> = <span class="function"><span class="params">event</span> =&gt;</span> &#123; </span><br><span class="line">    event.<span class="title function_">preventDefault</span>();</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>一般会在 ondrop 事件中确定最终行为的实现.</p>
+<h1 id="项目简介"><a href="#项目简介" class="headerlink" title="项目简介"></a>项目简介</h1><p>项目分为 todo-panel, todo-list, todo-item 三个组件</p>
+<p>1, todo-panel 控制整个 demo 效果的布局和总逻辑的实施, 所有响应式的 state 都在该组件中实现.<br>总控室.<br>所有需要动态渲染的 state 都在当前组件中配置</p>
+<p>2, todo-list 列表组件, 用于展示某种形态的列表<br>桥梁.<br>子组件(todo-item)的 drag 行为需要通过 todo-list 组件传递给父组件(todo-panel);<br>父组件(todo-panel)的 state 变化, 也会引起 todo-list 的动态渲染.</p>
+<p>3, todo-item 本 demo 中最小的行动单元, 具体的某一个 todo行为 的 封装组件<br>也是 被拖拽 的元素(组件), 因此, 在其内部实现了 ondragstart 和 ondragend 两个方法</p>
+<p><strong>注意: 当前 demo 只是一个本地的演示, 目的在于说明 drag 行为的实现需要配置的属性 以及 可能需要实现的事件, 在实际工作中可能还需要 ajax 请求的参与, 这里不再赘述.</strong></p>
+<h1 id="项目源码地址"><a href="#项目源码地址" class="headerlink" title="项目源码地址"></a>项目源码地址</h1><p><a target="_blank" rel="noopener" href="https://github.com/CoderLeoD/react-drag">源码地址传送门</a></p>
+<h1 id="项目截图"><a href="#项目截图" class="headerlink" title="项目截图"></a>项目截图</h1><p><img src="https://raw.githubusercontent.com/CoderLeoD/react-drag/main/src/images/demo.png" class="lazyload placeholder" data-srcset="https://raw.githubusercontent.com/CoderLeoD/react-drag/main/src/images/demo.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="项目截图"></p>
 
       </div>
       <div class="post-tags-categories">
@@ -747,8 +745,8 @@
               React
             </a>
           
-            <a href="/tags/TypeScript/" class="">
-              TypeScript
+            <a href="/tags/react-drag/" class="">
+              react-drag
             </a>
           
         </div>
@@ -762,7 +760,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>文章链接:  </strong>
-    <a href="/2022/04/27/react-typescript-xiang-mu-chuang-jian/" target="_blank" title="React+TypeScript项目创建">https://coderleod.github.io/2022/04/27/react-typescript-xiang-mu-chuang-jian/</a>
+    <a href="/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/" target="_blank" title="基于React的拖拽效果">https://coderleod.github.io/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明:   </strong>
@@ -780,41 +778,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/2022/07/31/js-shu-zu-bian-li-fang-fa-hui-zong/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> 上一篇:
-        <div class="title-text">js数组遍历方法汇总</div>
-      </div>
-      
-      <!-- <div class="content">
-        数组遍历方法汇总1, for循环JavaScript 版本: ECMAScript 1.0兼容性: 无
-2, map()
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
     </div>
-    <a href="/2022/01/06/schannel-failed-to-receive-handshake-ssl-tls-connection-failed/" class="post-nav-link">
+    <a href="/2023/12/19/remote-support-for-password-authentication-was-removed-on-august-13-2021/" class="post-nav-link">
       <div class="title">
         下一篇: <i class="fas fa-angle-right"></i>
-        <div class="title-text">schannel: failed to receive handshake, SSL/TLS connection failed</div>
+        <div class="title-text">remote: Support for password authentication was removed on August 13, 2021.</div>
       </div>
       <!-- <div class="content">
-        ​使用 GitHub Desktop 在 fetch 时突然报错，如下：
-错误信息：schannel: failed t
+        往 GitHub 上推送项目时，报如下错误：
+12345remote: Support for password aut
       </div> -->
     </a>
   </div>
@@ -1048,7 +1027,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%8Ccreate-react-app"><span class="toc-text">一，create-react-app</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8Cnpm"><span class="toc-text">1，npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8Cyarn"><span class="toc-text">2，yarn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%8Cvite"><span class="toc-text">二，vite</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%8Cnpm-1"><span class="toc-text">1，npm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2%EF%BC%8Cyarn-1"><span class="toc-text">2，yarn</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%8C%E6%80%BB%E7%BB%93"><span class="toc-text">三，总结</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-React-%E7%9A%84%E6%8B%96%E6%8B%BD%E6%95%88%E6%9E%9C-Demo"><span class="toc-text">基于 React 的拖拽效果 Demo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E5%85%B3%E9%94%AE%E7%82%B9"><span class="toc-text">两个关键点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#draggable-%E5%B1%9E%E6%80%A7"><span class="toc-text">draggable 属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#drag-%E4%BA%8B%E4%BB%B6"><span class="toc-text">drag 事件</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%80%E4%BB%8B"><span class="toc-text">项目简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81%E5%9C%B0%E5%9D%80"><span class="toc-text">项目源码地址</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E6%88%AA%E5%9B%BE"><span class="toc-text">项目截图</span></a></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
