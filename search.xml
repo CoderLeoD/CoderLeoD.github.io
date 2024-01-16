@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>Mac安装MySQL</title>
+      <link href="/2024/01/16/mac-an-zhuang-mysql/"/>
+      <url>/2024/01/16/mac-an-zhuang-mysql/</url>
+      
+        <content type="html"><![CDATA[<p><strong>环境</strong><br>电脑:<br>macOS Monterey 12.7.2<br>MacBook Pro( Retina, 13-inch, Early 2015)<br>处理器: 2.7GHz 双核 Inter Core i5<br>MySQL 的安装版本: 8.2.0</p><p>最近有更新系统, 重新配置了电脑, 因此, 之前安装的 MySQL 也都删除了, 这次安装经历有点坎坷, 记录下来, 希望可以帮助到需要的小伙伴!</p><p>以往安装 MySQL 都是通过 Homebrew 来安装的, 比较省心, 这次不知何故, 使用 Homebrew 来安装的几个软件都没能安装成功, 这次的 MySQL 也是一样, 莫名其妙的卡在某一个步骤 Error!</p><p>过程中还升级了 Homebrew 的版本, 关于 Homebrew 的安装问题, <a href="https://coderleod.github.io/2023/10/30/homebrew-an-zhuang-wen-ti-zong-jie/">有一篇博客, 需要的小伙伴可以前去查看.</a></p><p>最后, 放弃使用 Homebrew 来安装 MySQL, 直接从官网下载来安装.</p><h2 id="一-MySQL-官网下载"><a href="#一-MySQL-官网下载" class="headerlink" title="一, MySQL 官网下载"></a>一, MySQL 官网下载</h2><p>直接赋上下载地址: <a href="https://dev.mysql.com/downloads/mysql/">MySQL 官网下载</a></p><p>截图如下:<br><img src="/myImg/mysql/mac/anzhuang/dw1.png" class="lazyload placeholder" data-srcset="/myImg/mysql/mac/anzhuang/dw1.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="MySQL 下载"><br>这里有一个问题, 是选择 <strong>ARM</strong> 还是 <strong>x86</strong> ? 这两个什么区别?</p><p>简单来说, 就是处理器的架构, 智能手机一般都是 ARM 架构, 因为耗能小, 性能好等等一系列优点, 慢慢的, PC也在开始使用 ARM 架构了. 早起 PC 使用 x86 的架构较多, 苹果的 M系列芯片使用的就是 ARM 架构.</p><p>也就是说, 如果你用的电脑是 M系列芯片, 要选择 ARM; Inter芯片的话, 就选择 x86 就行.</p><p>前文我已经提到我自己的电脑是 Inter 芯片, 因此就选了 x86 之后, </p><p>截图如下:<br><img src="/myImg/mysql/mac/anzhuang/dw2.png" class="lazyload placeholder" data-srcset="/myImg/mysql/mac/anzhuang/dw2.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="MySQL 版本选择"></p><p>下载之后, 直接下一步安装就好.<br>在选择 <strong>Use Strong Password Encryption</strong> 还是 <strong>Use Legacy Password Encryption</strong> 时, 我选择了 后者, 也就是 Use Legacy Password Encryption.</p><p>默认是 Strong 等级, 基于 SHA256 加密的密码, 但是我后期想着使用工具连接 MySQL 方便等情况, 选择了 Legacy. 这个大家自行选择.</p><p>选择过之后, 就是设置密码, 再然后下一步, 下一步即可.</p><h1 id="二-环境变量配置"><a href="#二-环境变量配置" class="headerlink" title="二, 环境变量配置"></a>二, 环境变量配置</h1><p>打开终端, 编辑 .bash_profile, 指令如下:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.bash_profile</span><br></pre></td></tr></table></figure><p>然后, 输入以下内容:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/mysql/bin</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:/usr/local/mysql/support-files</span><br></pre></td></tr></table></figure><p>然后, esc，:wq!保存并退出.<br>以上内容是在终端操作的, 如果有小伙伴不习惯的话, 直接在 “访达” 的用户文件夹中找到 .bash_profile 文件, 然后 右键-&gt; 打开方式, 使用 “文本编辑” 模式打开文件后, 将上述两行内容直接粘贴进去就行.</p><p>接下来再来一条终端指令, 使刚才的配置生效.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span>  ~/.bash_profile</span><br></pre></td></tr></table></figure><h1 id="三-系统偏好设置中查看-MySQL"><a href="#三-系统偏好设置中查看-MySQL" class="headerlink" title="三, 系统偏好设置中查看 MySQL"></a>三, 系统偏好设置中查看 MySQL</h1><p>这个时候, 打开 “系统偏好设置” 就会在最底部看到 “MySQL” 了, 并且还可以进行 启动&#x2F;关闭 MySQL 的操作.<br><img src="/myImg/mysql/mac/anzhuang/dw3.png" class="lazyload placeholder" data-srcset="/myImg/mysql/mac/anzhuang/dw3.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="查看MySQL"><br><img src="/myImg/mysql/mac/anzhuang/dw4.png" class="lazyload placeholder" data-srcset="/myImg/mysql/mac/anzhuang/dw4.png" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="操作MySQL"></p><h1 id="四-操作-MySQL"><a href="#四-操作-MySQL" class="headerlink" title="四, 操作 MySQL"></a>四, 操作 MySQL</h1><p>接下来可以使用 终端 输入以下指令, 便可进入数据库进行操作了.</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure><p>或者使用 Navicat 连接本地数据库.</p><p>密码都是之前安装时设置的密码.</p><p><strong>本教程结束, 希望能够帮到你!</strong></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> MySQL </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Mac软件安装 </tag>
+            
+            <tag> MySQL安装 </tag>
+            
+            <tag> Mac版MySQL使用总结 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>基于React的拖拽效果</title>
       <link href="/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/"/>
       <url>/2023/12/26/ji-yu-react-de-tuo-zhuai-xiao-guo/</url>
@@ -276,7 +305,7 @@
       <link href="/2023/10/30/homebrew-an-zhuang-wen-ti-zong-jie/"/>
       <url>/2023/10/30/homebrew-an-zhuang-wen-ti-zong-jie/</url>
       
-        <content type="html"><![CDATA[<p>​<br>安装 Homebrew 执行指令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure><p>之后，报错，内容如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (7) Failed to connect to raw.githubusercontent.com port 443 after 27 ms: Couldn<span class="string">&#x27;t connect to server</span></span><br></pre></td></tr></table></figure><p>意思是，连接不到 raw.githubusercontent.com 这个地址执行操作了。</p><p>网上查了些方案，说是在 hosts 文件中配置 raw.githubusercontent.com 地址的就可以了。</p><p>但是，配置好之后，再次执行，又报错了，内容是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) Recv failure: Connection reset by peer</span><br></pre></td></tr></table></figure><p>其实啊，在国内能进入 Homebrew 官网的，就非等闲之辈！（八成科学上网了）</p><p>既然你都科学上网了，直接读一读 GitHub 上 Homebrew 的md文档，人家直接告诉你，macOS 系统，可以直接下载 pkg 来安装！！！</p><p><strong>那就直接下载 pkg 来安装吧！</strong><br>​</p>]]></content>
+        <content type="html"><![CDATA[<p>​<br>安装 Homebrew 执行指令</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/bin/bash -c <span class="string">&quot;<span class="subst">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)</span>&quot;</span></span><br></pre></td></tr></table></figure><p>之后，报错，内容如下：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (7) Failed to connect to raw.githubusercontent.com port 443 after 27 ms: Couldn<span class="string">&#x27;t connect to server</span></span><br></pre></td></tr></table></figure><p>意思是，连接不到 raw.githubusercontent.com 这个地址执行操作了。</p><p>网上查了些方案，说是在 hosts 文件中配置 raw.githubusercontent.com 地址的就可以了。</p><p>配置方式是:</p><p>1, 打开网站: <a href="https://www.ipaddress.com/">What Is My IP Address? Free IP Lookup</a></p><p>2, 搜索, raw.githubusercontent.com 的 IP 地址.</p><p>3, 修改 hosts 文件, 添加上述查询到的 ip 和 raw.githubusercontent.com 地址的对应映射.</p><p>这个过程需要将 hosts 文件拷贝一份到桌面, 因为原位置是不允许修改 hosts 文件的, 在拷贝出来的 hosts 文件中完成上述映射配置之后, 再将 复制出来的 hosts 复制回原位置, 这个时候会报一个错误, 因为当前位置已经有一个 hosts 文件了, 选择 “替换” 即可.</p><p>4, 再次执行上述终端指令</p><p>但是，配置好之后，再次执行，又报错了，内容是：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl: (35) Recv failure: Connection reset by peer</span><br></pre></td></tr></table></figure><p>其实啊，在国内能进入 Homebrew 官网的，就非等闲之辈！（八成科学上网了）</p><p>既然你都科学上网了，直接读一读 GitHub 上 Homebrew 的md文档，人家直接告诉你，macOS 系统，可以直接下载 pkg 来安装！！！</p><p><strong>那就直接下载 pkg 来安装吧！</strong><br>​</p>]]></content>
       
       
       <categories>
